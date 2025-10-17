@@ -10,6 +10,7 @@ import geopandas as gpd
 import rasterio
 from rasterstats import zonal_stats
 import os 
+import warnings
 
 os.chdir("./data")
 def extract_watershed_stats(watershed_path, raster_path, var_name, save_path=None):

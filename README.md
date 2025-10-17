@@ -15,7 +15,11 @@ Attributes for streams, catchments, and subcatchments were extracted from the NH
 Our approach to defining watershed boundaries relied on two key strategies: (1)  pairing gauges with watershed data from existing datasets via names/COMIDs, and  (2) developing an automatic watershed extraction algorithm for the rest to effectively handle complexities in manual watershed delineation. We applied the following:
 - a) Split the gauges in each HUC into five groups based on name query (Groups I & II), COMID query (Groups III & IV), and the remaining (Group V)
 ## (5) Forcing time-series extraction 
-Time-series N input forings from gTREND-Nitrogen and climate forcings from NLDAS were extracted based on watershed boundary
+Time-series N input forings from gTREND-Nitrogen and climate forcings from NLDAS2 were extracted based on watershed boundary. 
+
+The climate forcing extraction was done using two ways: 
+- 1) **Scrips/Forcing_Extraction/nldas_point_extraction.py**: For watersheds smaller than NLDAS2 grid (~0.125 degree), the forcings were extracted from coordinates of the centroid of watersheds.
+- 2) **hydroData** (https://github.com/mhpi/hydroData): Used for the larger watersheds  
 
 ## Citation:
 If you find the scripts, data, or paper useful, please cite: [DOI forthcoming upon publication]
@@ -25,5 +29,7 @@ For questions, feedback, or to report issues with the scripts and data, please r
 Shuyu Chang – shuyu.chang.hydro@gmail.com
 
 Doaa Aboelyazeed – dmf5963@psu.edu
+
+Kamlesh Sawadekar - kas7897@psu.edu
 
 We welcome collaboration and feedback to improve future versions of IWAND-Nitrogen.
